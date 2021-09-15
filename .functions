@@ -1,5 +1,5 @@
 #!/bin/bash
-## lazy git function
+## Lazy git function
 function lazygit() {
    if [ $# != 0 ]
 	then
@@ -13,11 +13,12 @@ function lazygit() {
 
 }
 
-## function to open .bashrc easily
+## Function to open .bashrc easily
 function bababui() {
     gedit ~/.bashrc
 }
 
+## Function to commit all the changed git folders in ~
 function xex() {
     for folder in ./*
     do
@@ -27,7 +28,7 @@ function xex() {
 	cd $(realpath $folder)
 	    if [[ `git status --porcelain` ]]; then
 	        git add .
-                git commit -m "Security_commit $folder $(date +%H:%M:%S)" 1>/dev/null
+                git commit -m "Security_commit $folder $(date %Y-%b%d-%H:%M)" 1>/dev/null
     	        git push 2>/dev/null
     	        echo "Actualizando $folder"
 	    else
