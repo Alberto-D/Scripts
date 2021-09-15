@@ -1,0 +1,44 @@
+#!/bin/bash
+## Lazy git function
+function lazygit() {
+   if [ $# != 0 ]
+	then
+    	
+    	git add .
+        git commit -m "$*"
+    	git push
+    else
+    	echo " Ponle nombre gilipollas"
+    fi
+
+}
+
+## Function to open .bashrc easily
+function bababui() {
+    gedit ~/.bashrc
+}
+
+## Function to commit all the changed git folders in ~
+function xex() {
+    for folder in ./*
+    do
+    	$(git -C $folder/ rev-parse 2>/dev/null)
+    	if [ $? == 0 ]
+	then
+	cd $(realpath $folder)
+	    if [[ `git status --porcelain` ]]; then
+	        git add .
+                git commit -m "Security_commit $folder $(date '%Y-%B-%d-%H:%M')" 1>/dev/null
+    	        git push 2>/dev/null
+    	        echo "Actualizando $folder"
+	    else
+  		echo "Sin cambios een $folder"
+	    fi
+	cd ~/
+	    
+    	    
+	fi
+    done
+    
+    
+}
