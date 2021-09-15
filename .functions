@@ -28,11 +28,11 @@ function xex() {
 	cd $(realpath $folder)
 	    if [[ `git status --porcelain` ]]; then
 	        git add .
-                git commit -m "Security_commit $folder $(date '+%H:%M_%b-%b-%Y')" 1>/dev/null
+                git commit -m "Security_commit $folder $(date '+%H:%M_%d-%b-%Y')" 1>/dev/null
     	        git push 2>/dev/null
-    	        echo "Actualizando $folder"
+    	        echo "Updating $folder"
 	    else
-  		echo "Sin cambios een $folder"
+  		echo "No changes in $folder"
 	    fi
 	cd ~/
 	    
