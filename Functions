@@ -25,7 +25,7 @@ function xex() {
     	$(git -C $folder/ rev-parse 2>/dev/null)
     	if [ $? == 0 ]
 	then
-	cd $(sudo realpath $folder)
+	cd $( realpath $folder)
 	    if [[ `git status --porcelain` ]]; then
 	        git add .
                 git commit -m "Security_commit $folder $(date '+%H:%M_%d-%b-%Y')" 1>/dev/null
