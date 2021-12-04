@@ -30,9 +30,9 @@ function xex() {
 	        git add .
                 git commit -m "Security_commit $folder $(date '+%H:%M_%d-%b-%Y')" 1>/dev/null
     	        git push 2>/dev/null
-    	        sudo echo "Updating $folder"
+    	        echo "Updating $folder"
 	    else
-  		sudo echo "No changes in $folder"
+  		echo "No changes in $folder"
 	    fi
 	cd ~/
 	    
