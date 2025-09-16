@@ -1,7 +1,7 @@
 @echo off
 CALL sincronizador.vbs
 Setlocal
-Set laptoponly=C:\Users\alber\Documents\Domotica\laptoponly.flg
+Set laptoponly=C:\PATHTOFILE\laptoponly.flg
 
 if Exist "%laptoponly%" (
     rem flag exists. Activate external display. Then delete flag.
@@ -12,4 +12,5 @@ if Exist "%laptoponly%" (
     rem flag does not exist. Activate external display. Then create flag
     DisplaySwitch.exe /internal
     Echo I'm a flag for myScript.cmd>"%laptoponly%"
+
 )
