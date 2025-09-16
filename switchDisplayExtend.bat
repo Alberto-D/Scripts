@@ -2,7 +2,7 @@
 CALL sincronizador.vbs
 
 Setlocal
-Set bothscreens=C:\Users\alber\Documents\Domotica\bothscreens.flg
+Set bothscreens=C:\PATHTOFILE\bothscreens.flg
 
 if Exist "%bothscreens%" (
     rem flag exists. Activate extend display. Then delete flag.
@@ -13,4 +13,5 @@ if Exist "%bothscreens%" (
     rem flag does not exist. Activate external display. Then create flag
     DisplaySwitch.exe /external
     Echo I'm a flag for myScript.cmd>"%bothscreens%"
+
 )
